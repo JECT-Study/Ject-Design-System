@@ -1,0 +1,6 @@
+@import 'tailwindcss';
+@config '../tailwind.config.ts';
+
+@theme {
+  --breakpoint-xl: 1200px;
+}

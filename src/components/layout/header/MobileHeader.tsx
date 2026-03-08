@@ -8,7 +8,7 @@ export function MobileHeader() {
 
   return (
     <>
-      <header className="sticky top-0 z-30 flex h-14 w-full shrink-0 items-center justify-between border-b border-slate-200 bg-white/80 px-4 backdrop-blur-md desktop:hidden">
+      <header className="sticky top-0 z-30 flex h-14 w-full shrink-0 items-center justify-between border-b border-slate-200 bg-white/80 px-4 backdrop-blur-md desktop:hidden tablet:hidden">
         <span className="font-bold text-slate-900">JDS Docs</span>
 
         <div className="hidden tablet:block">

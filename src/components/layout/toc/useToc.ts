@@ -18,7 +18,7 @@ export function useToc() {
     let debounceTimer: ReturnType<typeof setTimeout>;
 
     const extractHeadings = () => {
-      const elements = Array.from(document.querySelectorAll('h2, h3'));
+      const elements = Array.from(document.querySelectorAll('main h2, main h3'));
       const tocData: TocItem[] = elements.map((element) => ({
         id: element.id,
         title: element.textContent || '',
@@ -46,7 +46,7 @@ export function useToc() {
   }, []);
 
   useEffect(() => {
-    const elements = Array.from(document.querySelectorAll('h2, h3'));
+    const elements = Array.from(document.querySelectorAll('main h2, main h3'));
     if (elements.length === 0) return;
 
     // 현재 화면에 보이는 헤딩들을 추적

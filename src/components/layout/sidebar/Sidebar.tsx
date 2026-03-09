@@ -8,7 +8,8 @@ import {
   Logo,
   Accordion,
   IconButton,
-  Icon
+  Icon,
+  Input
 } from '@jects/jds';
 import Link from 'next/link';
 import { clsx } from 'clsx';
@@ -29,64 +30,6 @@ interface SidebarProps {
   navigationGroups?: NavigationGroup[];
 }
 
-/**
- * @description 사이드바에 표시될 메뉴 그룹 데이터 정의 (정적 폴백 역할)
- */
-const FALLBACK_NAVIGATION_GROUPS: NavigationGroup[] = [
-  {
-    title: 'Getting Started',
-    items: [
-      { label: 'Introduction', href: '/' },
-      { label: 'Installation', href: '/docs/getting-started/installation' },
-      { label: 'Theming', href: '/docs/getting-started/theming' },
-    ],
-  },
-  {
-    title: 'Foundations',
-    items: [
-      { label: 'Color', href: '/docs/foundations/color' },
-      { label: 'Typography', href: '/docs/foundations/typography' },
-      { label: 'Iconography', href: '/docs/foundations/iconography' },
-      { label: 'Spacing', href: '/docs/foundations/spacing' },
-      { label: 'Radius', href: '/docs/foundations/radius' },
-    ],
-  },
-  {
-    title: 'Atoms',
-    items: [
-      { label: 'Button', href: '/docs/atoms/button' },
-      { label: 'Input', href: '/docs/atoms/input' },
-      { label: 'Checkbox', href: '/docs/atoms/checkbox' },
-      { label: 'Radio', href: '/docs/atoms/radio' },
-      { label: 'Switch', href: '/docs/atoms/switch' },
-      { label: 'Badge', href: '/docs/atoms/badge' },
-    ],
-  },
-  {
-    title: 'Molecules',
-    items: [
-      { label: 'Select', href: '/docs/molecules/select' },
-      { label: 'Form', href: '/docs/molecules/form' },
-      { label: 'Tabs', href: '/docs/molecules/tabs' },
-      { label: 'Accordion', href: '/docs/molecules/accordion' },
-    ],
-  },
-  {
-    title: 'Organisms',
-    items: [
-      { label: 'DataTable', href: '/docs/organisms/data-table' },
-      { label: 'Navigation', href: '/docs/organisms/navigation' },
-    ],
-  },
-  {
-    title: 'Patterns',
-    items: [
-      { label: 'Sidebar', href: '/docs/patterns/sidebar' },
-      { label: 'Layout', href: '/docs/patterns/layout' },
-      { label: 'Dashboard', href: '/docs/patterns/dashboard' },
-    ],
-  },
-];
 
 // 경로가 포함되어 있는지 확인하는 함수
 const hasActivePath = (items: NavigationItem[] | undefined, pathname: string): boolean => {
@@ -96,17 +39,70 @@ const hasActivePath = (items: NavigationItem[] | undefined, pathname: string): b
   );
 };
 
-export function Sidebar({ navigationGroups = FALLBACK_NAVIGATION_GROUPS }: SidebarProps) {
+export function Sidebar({ navigationGroups }: SidebarProps) {
+
   const pathname = usePathname();
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   // 현재 경로가 포함된 그룹들을 기본적으로 열어둠
-  const initialExpanded = navigationGroups
-    .filter(group => hasActivePath(group.items, pathname) || group.href === pathname)
+  const initialExpanded = navigationGroups?.filter(group => hasActivePath(group.items, pathname) || group.href === pathname)
     .map(group => group.title);
 
-  const [expandedValue, setExpandedValue] = useState<string[]>(initialExpanded);
+  const [expandedValue, setExpandedValue] = useState<string[]>(initialExpanded || []);
   const [prevPathname, setPrevPathname] = useState(pathname);
+  const [searchQuery, setSearchQuery] = useState('');
+  // navigationGroups가 없으면 렌더링하지 않음
+  if (!navigationGroups) return;
+
+  // 검색어를 기준으로 네비게이션 트리를 필터링하는 함수
+  const filterNavGroups = (groups: NavigationGroup[], query: string): NavigationGroup[] => {
+    if (!query) return groups;
+
+    const lowerQuery = query.toLowerCase();
+
+    return groups.map(group => {
+      // 1. 만약 부모 카테고리 이름 자체가 매치된다면? 
+      //    그 카테고리와 내부 자녀들은 모두 렌더링하도록 냅둘 수 있지만,
+      //    일반적으로 '하위 메뉴'를 검색하는 경우가 많으므로 하위 아이템을 필터링합니다.
+
+      const filterItems = (items?: NavigationItem[]): NavigationItem[] | undefined => {
+        if (!items) return undefined;
+
+        return items.filter(item => {
+          // 본인 라벨이 일치하는가?
+          const isMatch = item.label.toLowerCase().includes(lowerQuery);
+
+          // 자식이 있다면 자식 중 일치하는게 있는가?
+          const filteredChildren = filterItems(item.items);
+          const hasMatchingChildren = filteredChildren && filteredChildren.length > 0;
+
+          // 본인 또는 자녀 중 하나라도 일치하면 유지
+          // 일치한 자녀 리스트로 교체
+          if (hasMatchingChildren) {
+            item.items = filteredChildren;
+            return true;
+          }
+
+          return isMatch;
+        });
+      };
+
+      const filteredItems = filterItems(group.items);
+
+      // 본인 그룹 이름이 검색어에 들어있거나, 자식 중 매칭되는 결과가 있으면 리턴
+      const isGroupMatch = group.title.toLowerCase().includes(lowerQuery);
+      if (isGroupMatch || (filteredItems && filteredItems.length > 0)) {
+        return {
+          ...group,
+          items: filteredItems || group.items
+        };
+      }
+
+      return null;
+    }).filter(Boolean) as NavigationGroup[];
+  };
+
+  const filteredNavigationGroups = filterNavGroups(navigationGroups, searchQuery);
 
   // 경로 변경 시 해당 그룹 자동 확장 
   if (pathname !== prevPathname) {
@@ -240,12 +236,14 @@ export function Sidebar({ navigationGroups = FALLBACK_NAVIGATION_GROUPS }: Sideb
           <>
             {/* Search Area */}
             <div className="w-full border-b border-slate-200 bg-white shrink-0">
-              <div className="flex items-center px-20 py-12">
+              <div className="px-[20px] py-[12px] flex items-center">
                 <Icon name="search-line" className="text-slate-400 w-[18px] h-[18px] mr-3 shrink-0" />
-                <input
-                  type="text"
+                <Input.TextField
+                  style="empty"
                   placeholder="문서 전체 검색"
-                  className="w-full bg-transparent text-[14px] text-slate-700 outline-none placeholder:text-slate-400"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full text-[14px]"
                 />
               </div>
             </div>
@@ -258,7 +256,12 @@ export function Sidebar({ navigationGroups = FALLBACK_NAVIGATION_GROUPS }: Sideb
                 onValueChange={setExpandedValue}
                 className="flex flex-col gap-2"
               >
-                {navigationGroups.map((group) => {
+                {filteredNavigationGroups.length === 0 && searchQuery && (
+                  <div className="text-sm text-slate-500 p-4 text-center">
+                    검색 결과가 없습니다.
+                  </div>
+                )}
+                {filteredNavigationGroups.map((group) => {
                   const hasChildren = group.items && group.items.length > 0;
                   const isActive = hasChildren ? hasActivePath(group.items, pathname) : pathname === group.href;
 

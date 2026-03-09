@@ -294,15 +294,25 @@ export function Sidebar({ navigationGroups = FALLBACK_NAVIGATION_GROUPS }: Sideb
 
       {/* Footer Area */}
       {!isCollapsed && (
-        <div className="mt-auto shrink-0 bg-slate-50/30">
-          <div className="flex items-center justify-between p-4 px-5">
-            <div className="flex items-center gap-1">
-              <IconButton.Basic icon="home-2-line" aria-label="Home" size="sm" className="text-slate-500 hover:text-slate-900 transition-colors" />
-              <IconButton.Basic icon="github-fill" aria-label="Github" size="sm" className="text-slate-500 hover:text-slate-900 transition-colors" />
-              <IconButton.Basic icon="file-text-line" aria-label="Docs" size="sm" className="text-slate-500 hover:text-slate-900 transition-colors" />
-              <IconButton.Basic icon="global-line" aria-label="Web" size="sm" className="text-slate-500 hover:text-slate-900 transition-colors" />
+        <div className="mt-auto shrink-0 bg-semantic-surface-deep">
+          <div className="flex items-center justify-between p-20 pt-16 border-t border-slate-200 ">
+            <div className="flex items-center gap-1 border border-slate-200 rounded-[8px] bg-semantic-surface-shallow">
+              <div className="p-6 border-r border-slate-200 flex items-center">
+                <IconButton.Basic icon="home-2-line" aria-label="Home" size="sm" className=" text-slate-500 hover:text-slate-900 transition-colors" />
+              </div>
+              <div className="p-6 border-r border-slate-200 flex items-center">
+                <IconButton.Basic icon="github-fill" aria-label="Github" size="sm" className=" text-slate-500 hover:text-slate-900 transition-colors" />
+              </div>
+              <div className="p-6 border-r border-slate-200 flex items-center">
+                <IconButton.Basic icon="file-text-line" aria-label="Docs" size="sm" className=" text-slate-500 hover:text-slate-900 transition-colors" />
+              </div>
+              <div className="p-6 flex items-center">
+                <IconButton.Basic icon="global-line" aria-label="Web" size="sm" className=" text-slate-500 hover:text-slate-900 transition-colors" />
+              </div>
             </div>
-            <IconButton.Basic icon="moon-line" aria-label="Theme" size="sm" className="text-slate-500 hover:text-slate-900 transition-colors" />
+            <div className="p-6 border border-slate-200 rounded-[8px] flex items-center bg-semantic-surface-shallow">
+              <IconButton.Basic icon="moon-line" aria-label="Theme" size="sm" className=" text-slate-500 hover:text-slate-900 transition-colors" />
+            </div>
           </div>
         </div>
       )}

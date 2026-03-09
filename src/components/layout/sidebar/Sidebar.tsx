@@ -121,19 +121,30 @@ export function Sidebar({ navigationGroups = FALLBACK_NAVIGATION_GROUPS }: Sideb
 
   // 중첩된 자식 아이템들을 렌더링하는 함수
   const renderNavItems = (items: NavigationItem[], level: number = 1) => {
+    const getIndentClass = (lv: number) => {
+      switch (lv) {
+        case 1: return "pl-[24px]"; // 16 * 1 + 8
+        case 2: return "pl-[40px]"; // 16 * 2 + 8
+        case 3: return "pl-[56px]"; // 16 * 3 + 8
+        case 4: return "pl-[72px]"; // 16 * 4 + 8
+        case 5: return "pl-[88px]"; // 16 * 5 + 8
+        default: return "pl-[104px]";// 16 * 6 + 8
+      }
+    };
+
     return (
       <ul className="flex flex-col gap-1 w-full">
         {items.map((item) => (
           <li key={item.href || item.label} className={level > 1 ? "mt-1" : ""}>
             {/* href가 없으면 단순 텍스트, 있으면 링크로 처리 */}
             {item.href ? (
-              <Link href={item.href} passHref legacyBehavior>
+              <Link href={item.href} passHref >
                 <MenuItem.Anchor
                   isSelected={pathname === item.href}
                   size="sm"
-                  style={{ paddingLeft: `${16 * level + 8}px` }}
                   className={clsx(
                     "w-full",
+                    getIndentClass(level),
                     pathname === item.href ? "after:opacity-[0.08]!" : ""
                   )}
                 >
@@ -142,8 +153,10 @@ export function Sidebar({ navigationGroups = FALLBACK_NAVIGATION_GROUPS }: Sideb
               </Link>
             ) : (
               <div
-                className="py-1 mt-2 font-medium text-slate-500 text-[13px]"
-                style={{ paddingLeft: `${16 * level + 8}px` }}
+                className={clsx(
+                  "py-1 mt-2 font-medium text-slate-500 text-[13px]",
+                  getIndentClass(level)
+                )}
               >
                 {item.label}
               </div>

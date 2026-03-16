@@ -18,7 +18,9 @@ export function useToc() {
     let debounceTimer: ReturnType<typeof setTimeout>;
 
     const extractHeadings = () => {
-      const elements = Array.from(document.querySelectorAll('main h2, main h3'));
+      const elements = Array.from(document.querySelectorAll('h2[id], h3[id]')).filter(
+        (el) => !el.closest('nav') && !el.closest('aside'),
+      );
       const tocData: TocItem[] = elements.map((element) => ({
         id: element.id,
         title: element.textContent || '',
@@ -35,7 +37,7 @@ export function useToc() {
 
     extractHeadings();
 
-    const container = document.querySelector('main') || document.body;
+    const container = document.body;
     const mutationObserver = new MutationObserver(onMutate);
     mutationObserver.observe(container, { childList: true, subtree: true });
 
@@ -46,7 +48,10 @@ export function useToc() {
   }, []);
 
   useEffect(() => {
-    const elements = Array.from(document.querySelectorAll('main h2, main h3'));
+    const elements = Array.from(document.querySelectorAll('h2[id], h3[id]')).filter(
+      (el) => !el.closest('nav') && !el.closest('aside'),
+    );
+
     if (elements.length === 0) return;
 
     // 현재 화면에 보이는 헤딩들을 추적

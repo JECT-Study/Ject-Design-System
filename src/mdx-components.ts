@@ -1,5 +1,15 @@
-export function useMDXComponents(components) {
+import { MdxH1, MdxH2, MdxH3, MdxH4, MdxH5, MdxH6 } from '@/components/mdx/MdxHeadings';
+
+type MDXComponents = Record<string, unknown>;
+
+export function useMDXComponents(components: MDXComponents = {}): MDXComponents {
   return {
     ...components,
+    h1: MdxH1,
+    h2: MdxH2,
+    h3: MdxH3,
+    h4: MdxH4,
+    h5: MdxH5,
+    h6: MdxH6,
   };
 }

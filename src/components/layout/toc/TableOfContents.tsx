@@ -1,7 +1,7 @@
 "use client"
 
 import type { MouseEvent } from 'react';
-import { Label, MenuItem } from '@jects/jds';
+import { Label, MenuItem, IconButton, Menu} from '@jects/jds';
 import clsx from 'clsx';
 
 import { getTocIndentClassName } from './tocConstants';

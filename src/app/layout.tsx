@@ -1,16 +1,16 @@
 import localFont from 'next/font/local';
 import {
+  DocFooter,
   DocumentArea,
   DocumentContainer,
-  DocFooter,
+  EmotionRegistry,
+  JdsThemeProvider,
   MobileHeader,
   Sidebar,
   TableOfContents,
 } from '@/components';
 
 import { getNavigationGroups } from '@/utils/getNavigation';
-import { EmotionRegistry } from '@/components/jds/EmotionRegistry';
-import { JdsThemeProvider } from '@/components/jds/JdsThemeProvider';
 
 import '@/styles/globals.css';
 

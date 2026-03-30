@@ -1,5 +1,10 @@
 import { MdxH1, MdxH2, MdxH3, MdxH4, MdxH5, MdxH6 } from '@/components/mdx/MdxHeadings';
 
+import { MobileHeader } from './components';
+import { DocVariant } from './components/layout/DocVariantSection/DocVariantSection';
+import { PropertiesTable } from './components/PropertiesTable/PropertiesTable';
+import { DocTabs } from './components/Tabs/Tabs';
+
 type MDXComponents = Record<string, unknown>;
 
 export function useMDXComponents(components: MDXComponents = {}): MDXComponents {
@@ -11,5 +16,9 @@ export function useMDXComponents(components: MDXComponents = {}): MDXComponents 
     h4: MdxH4,
     h5: MdxH5,
     h6: MdxH6,
+    MobileHeader,
+    DocTabs,
+    PropertiesTable,
+    DocVariant,
   };
 }

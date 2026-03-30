@@ -64,7 +64,6 @@ export function Sidebar({ navigationGroups }: SidebarProps) {
       // 1. 만약 부모 카테고리 이름 자체가 매치된다면? 
       //    그 카테고리와 내부 자녀들은 모두 렌더링하도록 냅둘 수 있지만,
       //    일반적으로 '하위 메뉴'를 검색하는 경우가 많으므로 하위 아이템을 필터링합니다.
-
       const filterItems = (items?: NavigationItem[]): NavigationItem[] | undefined => {
         if (!items) return undefined;
 
@@ -134,19 +133,18 @@ export function Sidebar({ navigationGroups }: SidebarProps) {
           <li key={item.href || item.label} className={level > 1 ? "mt-1" : ""}>
             {/* href가 없으면 단순 텍스트, 있으면 링크로 처리 */}
             {item.href ? (
-              <Link href={item.href} passHref >
-                <MenuItem.Anchor
-                  isSelected={pathname === item.href}
-                  size="sm"
-                  className={clsx(
-                    "w-full",
-                    getIndentClass(level),
-                    pathname === item.href ? "after:opacity-[0.08]!" : ""
-                  )}
-                >
-                  {item.label}
-                </MenuItem.Anchor>
-              </Link>
+              <MenuItem.Anchor
+                href={item.href}
+                isSelected={pathname === item.href}
+                size="sm"
+                className={clsx(
+                  "w-full",
+                  getIndentClass(level),
+                  pathname === item.href ? "after:opacity-[0.08]!" : ""
+                )}
+              >
+                {item.label}
+              </MenuItem.Anchor>
             ) : (
               <div
                 className={clsx(
@@ -173,26 +171,24 @@ export function Sidebar({ navigationGroups }: SidebarProps) {
   return (
     <aside className={clsx(
       "sticky top-0 z-40 hidden h-screen shrink-0 bg-white tablet:flex desktop:flex flex-col transition-all duration-300 ease-in-out border-r border-slate-200",
-      isCollapsed ? "w-0" : "w-[260px]"
+      isCollapsed ? "w-0" : "w-65"
     )}>
       {/* Sidebar Header / Logo Area */}
       <div className={clsx(
         "sticky top-0 z-10 flex bg-white transition-all duration-300 items-center justify-between",
-        isCollapsed ? "h-20 items-start pt-[20px] justify-start" : "border-b border-slate-200 bg-white shrink-0 px-[20px] py-[12px]"
+        isCollapsed ? "h-20 items-start pt-5 justify-start" : "border-b border-slate-200 bg-white shrink-0 px-5 py-[12px]"
       )}>
         {!isCollapsed && (
-          <Link href="/" className="flex items-center">
-            <Logo href="/" hierarchy="primary" height={24} />
-          </Link>
+          <Logo href="/" hierarchy="primary" height={24} />
         )}
 
         <div className={clsx(
           "flex items-center transition-all duration-300",
-          isCollapsed ? " ml-[24px] flex-row border border-slate-200 rounded-[8px] bg-white h-[30px] box-content" : "flex-row gap-1"
+          isCollapsed ? " ml-[24px] flex-row border border-slate-200 rounded-lg bg-white h-7.5 box-content" : "flex-row gap-1"
         )}>
           <div className={clsx(
             'flex items-center justify-center',
-            isCollapsed ? 'w-[30px] h-full border-r border-slate-200' : 'p-6'
+            isCollapsed ? 'w-7.5 h-full border-r border-slate-200' : 'p-6'
           )}>
             <IconButton.Basic
               icon="bookmark-line"
@@ -208,14 +204,14 @@ export function Sidebar({ navigationGroups }: SidebarProps) {
 
           {isCollapsed && (
             <>
-              <div className='flex items-center justify-center w-[30px] h-full border-r border-slate-200 hover:bg-slate-50 transition-colors'>
+              <div className='flex items-center justify-center w-7.5 h-full border-r border-slate-200 hover:bg-slate-50 transition-colors'>
                 <IconButton.Basic
                   icon="search-line"
                   aria-label="Search"
                   size="sm"
                 />
               </div>
-              <div className='flex items-center justify-center w-[30px] h-full hover:bg-slate-50 transition-colors rounded-r-[8px]'>
+              <div className='flex items-center justify-center w-7.5 h-full hover:bg-slate-50 transition-colors rounded-r-lg'>
                 <IconButton.Basic
                   icon="moon-line"
                   aria-label="Theme"
@@ -236,8 +232,8 @@ export function Sidebar({ navigationGroups }: SidebarProps) {
           <>
             {/* Search Area */}
             <div className="w-full border-b border-slate-200 bg-white shrink-0">
-              <div className="px-[20px] py-[12px] flex items-center">
-                <Icon name="search-line" className="text-slate-400 w-[18px] h-[18px] mr-3 shrink-0" />
+              <div className="px-5 py-[12px] flex items-center">
+                <Icon name="search-line" className="text-slate-400 w-4.5 h-4.5 mr-3 shrink-0" />
                 <Input.TextField
                   style="empty"
                   placeholder="문서 전체 검색"
@@ -269,16 +265,14 @@ export function Sidebar({ navigationGroups }: SidebarProps) {
                   if (!hasChildren && group.href) {
                     return (
                       <div key={group.title} className="w-full">
-                        <Link href={group.href} passHref legacyBehavior>
-                          <a className="px-2 py-1.5 hover:bg-slate-50 rounded-md transition-colors w-full flex items-center justify-between group/trigger">
-                            <Label
-                              size="sm"
-                              weight={isActive ? 'bold' : 'normal'}
-                              className="cursor-pointer transition-colors group-hover/trigger:text-slate-900"
-                            >
-                              {group.title}
-                            </Label>
-                          </a>
+                        <Link href={group.href} className="px-2 py-1.5 hover:bg-slate-50 rounded-md transition-colors w-full flex items-center justify-between group/trigger">
+                          <Label
+                            size="sm"
+                            weight={isActive ? 'bold' : 'normal'}
+                            className="cursor-pointer transition-colors group-hover/trigger:text-slate-900"
+                          >
+                            {group.title}
+                          </Label>
                         </Link>
                       </div>
                     );
@@ -312,7 +306,7 @@ export function Sidebar({ navigationGroups }: SidebarProps) {
       {!isCollapsed && (
         <div className="mt-auto shrink-0 bg-semantic-surface-deep">
           <div className="flex items-center justify-between p-20 pt-16 border-t border-slate-200 ">
-            <div className="flex items-center gap-1 border border-slate-200 rounded-[8px] bg-semantic-surface-shallow">
+            <div className="flex items-center gap-1 border border-slate-200 rounded-lg bg-semantic-surface-shallow">
               <div className="p-6 border-r border-slate-200 flex items-center">
                 <IconButton.Basic icon="home-2-line" aria-label="Home" size="sm" className=" text-slate-500 hover:text-slate-900 transition-colors" />
               </div>
@@ -326,7 +320,7 @@ export function Sidebar({ navigationGroups }: SidebarProps) {
                 <IconButton.Basic icon="global-line" aria-label="Web" size="sm" className=" text-slate-500 hover:text-slate-900 transition-colors" />
               </div>
             </div>
-            <div className="p-6 border border-slate-200 rounded-[8px] flex items-center bg-semantic-surface-shallow">
+            <div className="p-6 border border-slate-200 rounded-lg flex items-center bg-semantic-surface-shallow">
               <IconButton.Basic icon="moon-line" aria-label="Theme" size="sm" className=" text-slate-500 hover:text-slate-900 transition-colors" />
             </div>
           </div>

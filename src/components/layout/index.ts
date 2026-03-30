@@ -1,3 +1,4 @@
+export * from './DocIntroSection/DocIntroSection';
 export { MobileHeader } from './header/MobileHeader';
 export { DocumentArea } from './shell/DocumentArea';
 export { DocumentContainer } from './shell/DocumentContainer';

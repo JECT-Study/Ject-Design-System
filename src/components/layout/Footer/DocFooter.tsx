@@ -6,40 +6,24 @@ import { BlockButton, Divider, Icon, IconButton, Label, Logo } from '@jects/jds'
 import type { NavigationGroup, NavigationItem } from '@/utils/getNavigation';
 import { ActionGroup } from '@/components/ActionGroup/ActionGroup';
 
-interface FlatNavItem {
-  label: string;
-  href: string;
-}
+import { DocFooterProps, FlatNavItem } from './DocFooter.types';
 
 function flattenNavigation(groups: NavigationGroup[]): FlatNavItem[] {
   const result: FlatNavItem[] = [];
 
   function traverse(items: NavigationItem[]) {
     for (const item of items) {
-      if (item.href) {
-        result.push({ label: item.label, href: item.href });
-      }
-      if (item.items) {
-        traverse(item.items);
-      }
+      if (item.href) result.push({ label: item.label, href: item.href });
+      if (item.items) traverse(item.items);
     }
   }
 
   for (const group of groups) {
-    if (group.href) {
-      result.push({ label: group.title, href: group.href });
-    }
-    if (group.items) {
-      traverse(group.items);
-    }
+    if (group.href) result.push({ label: group.title, href: group.href });
+    if (group.items) traverse(group.items);
   }
 
   return result;
-}
-
-interface DocFooterProps {
-  navigationGroups: NavigationGroup[] | undefined;
-  feedbackUrl?: string;
 }
 
 export function DocFooter({ navigationGroups }: DocFooterProps) {
@@ -78,7 +62,6 @@ export function DocFooter({ navigationGroups }: DocFooterProps) {
           ) : (
             <div />
           )}
-
           {nextPage ? (
             <BlockButton.Basic
               hierarchy="secondary"

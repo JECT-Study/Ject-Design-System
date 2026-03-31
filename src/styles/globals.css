@@ -1,2 +1,13 @@
 @import 'tailwindcss';
 @config '../../tailwind.config.ts';
+
+@layer base {
+  :root {
+    --primitive-typeface-hero: var(--font-pretendard) !important;
+    --primitive-typeface-title: var(--font-pretendard) !important;
+    --primitive-typeface-label: var(--font-pretendard) !important;
+    --primitive-typeface-body: var(--font-pretendard) !important;
+
+    --primitive-typeface-syntax: var(--font-d2coding) !important;
+  }
+}

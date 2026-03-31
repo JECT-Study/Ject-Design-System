@@ -34,6 +34,10 @@ export const navDictionaries: Record<Locale, Record<string, string>> = {
     molecules: '분자',
     organisms: '유기체',
     patterns: '패턴',
+    component: '컴포넌트',
+    blockButton: '블록 버튼',
+    labelButton: '라벨 버튼',
+    iconButton: '아이콘 버튼',
   },
   en: {
     overview: 'Overview',
@@ -68,6 +72,10 @@ export const navDictionaries: Record<Locale, Record<string, string>> = {
     molecules: 'Molecules',
     organisms: 'Organisms',
     patterns: 'Patterns',
+    component: 'Component',
+    blockButton: 'Block Button',
+    labelButton: 'Label Button',
+    iconButton: 'Icon Button',
   },
 };
 

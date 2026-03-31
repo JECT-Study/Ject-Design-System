@@ -1,3 +1,20 @@
-export const BLOCK_BUTTON_VARIANTS = ['solid', 'outlined', 'empty'] as const;
-export const BLOCK_BUTTON_HIERARCHIES = ['accent', 'primary', 'secondary', 'tertiary'] as const;
-export const BLOCK_BUTTON_SIZES = ['lg', 'md', 'sm', 'xs'] as const;
+export enum Properties {
+  Children = 'children',
+  Variant = 'variant',
+  Hierarchy = 'hierarchy',
+  Size = 'size',
+  Feedback = 'feedback',
+  Icon = 'icon',
+  AriaLabel = 'aria-label',
+  PrefixIcon = 'prefixIcon',
+  SuffixIcon = 'suffixIcon',
+  Disabled = 'disabled',
+}
+
+export const BUTTON_PROPS = {
+  BLOCK_BUTTON: {
+    VARIANTS: ['solid', 'outlined', 'empty'] as const,
+    HIERARCHIES: ['accent', 'primary', 'secondary', 'tertiary'] as const,
+    SIZES: ['lg', 'md', 'sm', 'xs'] as const,
+  },
+};

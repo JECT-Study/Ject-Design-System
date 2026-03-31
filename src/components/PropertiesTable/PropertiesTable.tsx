@@ -1,15 +1,12 @@
 'use client';
 
-import { Table, Title } from '@jects/jds';
+import { Table } from '@jects/jds';
 
 import { PropertiesTableProps } from './PropertiesTable.type';
 
 export function PropertiesTable({ rows }: PropertiesTableProps) {
   return (
     <div className="flex flex-col gap-24">
-      <Title size="md" textAlign="left">
-        프로퍼티
-      </Title>
       <Table.Root>
         <Table.Header>
           <Table.Row>

@@ -21,4 +21,8 @@ export const BUTTON_PROPS = {
     HIERARCHIES: ['primary', 'secondary', 'accent', 'tertiary'] as const,
     SIZES: ['lg', 'md', 'sm', 'xs', '3xl', '2xl', 'xl', '2xs'] as const,
   },
+  LABEL_BUTTON: {
+    HIERARCHIES: ['primary', 'secondary', 'accent', 'tertiary'] as const,
+    SIZES: ['lg', 'md', 'sm', 'xs'] as const,
+  },
 };

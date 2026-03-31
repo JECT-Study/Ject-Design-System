@@ -178,7 +178,7 @@ export function Sidebar({ navigationGroups }: SidebarProps) {
                       )}
                     >
                       <Label
-                        size="sm"
+                        size="md"
                         weight={isSubActive ? 'bold' : 'normal'}
                         className="cursor-pointer"
                       >
@@ -199,7 +199,7 @@ export function Sidebar({ navigationGroups }: SidebarProps) {
                 <MenuItem.Anchor
                   href={item.href}
                   isSelected={pathname === item.href}
-                  size="sm"
+                  size="md"
                   className={clsx(
                     'w-full',
                     getIndentClass(level),
@@ -272,10 +272,10 @@ export function Sidebar({ navigationGroups }: SidebarProps) {
           {isCollapsed && (
             <>
               <div className="flex h-full w-7.5 items-center justify-center border-r border-slate-200 transition-colors hover:bg-slate-50">
-                <IconButton.Basic icon="search-line" aria-label="Search" size="sm" />
+                <IconButton.Basic icon="search-line" aria-label="Search" size="md" />
               </div>
               <div className="flex h-full w-7.5 items-center justify-center rounded-r-lg transition-colors hover:bg-slate-50">
-                <IconButton.Basic icon="moon-line" aria-label="Theme" size="sm" />
+                <IconButton.Basic icon="moon-line" aria-label="Theme" size="md" />
               </div>
             </>
           )}
@@ -335,7 +335,7 @@ export function Sidebar({ navigationGroups }: SidebarProps) {
                           className="group/trigger flex w-full items-center justify-between rounded-md px-2 py-1.5 transition-colors hover:bg-slate-50"
                         >
                           <Label
-                            size="sm"
+                            size="md"
                             weight={isActive ? 'bold' : 'normal'}
                             className="cursor-pointer transition-colors group-hover/trigger:text-slate-900"
                           >
@@ -351,7 +351,7 @@ export function Sidebar({ navigationGroups }: SidebarProps) {
                     <Accordion.Item key={group.title} value={group.title} className="border-none!">
                       <Accordion.Trigger className="group/trigger flex w-full items-center justify-between rounded-md px-2 py-1.5 transition-colors hover:bg-slate-50">
                         <Label
-                          size="sm"
+                          size="md"
                           weight={isActive ? 'bold' : 'normal'}
                           className="cursor-pointer transition-colors group-hover/trigger:text-slate-900"
                         >

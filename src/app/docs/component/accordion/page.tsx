@@ -9,7 +9,7 @@ import {
   accordionDisplayName,
 } from './Accordion.constants';
 
-export default function BlockButtonPage() {
+export default function AccordionPage() {
   return (
     <div className="flex flex-col gap-80">
       <DocIntroSection

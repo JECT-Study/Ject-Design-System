@@ -13,7 +13,7 @@ export const navDictionaries: Record<Locale, Record<string, string>> = {
     badge: '배지',
     contentBadge: '콘텐츠 배지',
     dotBadge: '닷 배지',
-    'default-badge': '기본 배지',
+    numericBadge: '너머릭 배지',
     button: '버튼',
     input: '인풋',
     checkbox: '체크박스',

@@ -53,12 +53,17 @@ export const ACCORDION_PROPS = {
 
 export const BADGE_PROPS = {
   CONTENT_BADGE: {
-    HIERARCHIES: ['accent', 'primary', 'secondary', 'tertiary'] as const,
     SIZES: ['lg', 'md', 'sm', 'xs'] as const,
     STYLES: ['outlined', 'alpha', 'solid'] as const,
+    HIERARCHIES: ['accent', 'primary', 'secondary', 'tertiary'] as const,
   },
   DOT_BADGE: {
     SIZES: ['lg', 'md', 'sm', 'xs'] as const,
     VARIANTS: ['positive', 'destructive', 'notifying'] as const,
+  },
+  NUMERIC_BADGE: {
+    STYLES: ['empty', 'solid'] as const,
+    SIZES: ['lg', 'md', 'sm', 'xs'] as const,
+    HIERARCHIES: ['accent', 'primary', 'secondary', 'tertiary'] as const,
   },
 };

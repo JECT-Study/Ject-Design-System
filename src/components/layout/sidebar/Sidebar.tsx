@@ -150,7 +150,7 @@ export function Sidebar({ navigationGroups }: SidebarProps) {
         case 5:
           return 'pl-[88px]'; // 16 * 5 + 8
         default:
-          return 'pl-[104px]'; // 16 * 6 + 8
+          return 'pl-[14px]'; // 16 * 6 + 8
       }
     };
 
@@ -258,7 +258,7 @@ export function Sidebar({ navigationGroups }: SidebarProps) {
             )}
           >
             <IconButton.Basic
-              icon="bookmark-line"
+              icon="menu-line"
               aria-label="Toggle Sidebar"
               onClick={() => setIsCollapsed(!isCollapsed)}
               size={isCollapsed ? 'sm' : 'md'}

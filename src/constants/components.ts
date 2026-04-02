@@ -9,7 +9,18 @@ export const Properties = {
   PrefixIcon: 'prefixIcon',
   SuffixIcon: 'suffixIcon',
   Disabled: 'disabled',
+  Type: 'type',
+  IsStretched: 'isStretched',
+  Collapsible: 'collapsible',
+  WithPrefixIcon: 'withPrefixIcon',
+  AsChild: 'asChild',
+  DefaultValue: 'defaultValue',
 } as const;
+
+export const Title = {
+  Single: 'single',
+  Multiple: 'multiple',
+};
 
 export const BUTTON_PROPS = {
   BLOCK_BUTTON: {
@@ -25,4 +36,9 @@ export const BUTTON_PROPS = {
     HIERARCHIES: ['primary', 'secondary', 'accent', 'tertiary'] as const,
     SIZES: ['lg', 'md', 'sm', 'xs'] as const,
   },
+};
+
+export const ACCORDION_PROPS = {
+  TYPES: ['single', 'multiple'] as const,
+  SIZES: ['lg', 'md', 'sm'] as const,
 };

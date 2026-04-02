@@ -57,4 +57,8 @@ export const BADGE_PROPS = {
     SIZES: ['lg', 'md', 'sm', 'xs'] as const,
     STYLES: ['outlined', 'alpha', 'solid'] as const,
   },
+  DOT_BADGE: {
+    SIZES: ['lg', 'md', 'sm', 'xs'] as const,
+    VARIANTS: ['positive', 'destructive', 'notifying'] as const,
+  },
 };

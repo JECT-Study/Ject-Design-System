@@ -24,13 +24,12 @@ export const CONTENT_BADGE_PROPERTIES = [
   {
     name: Properties.Children,
     type: ['string'],
-    default: '레이블',
     description: '배지 텍스트',
   },
   {
     name: Properties.Hierarchy,
     type: [...BADGE_PROPS.CONTENT_BADGE.HIERARCHIES],
-    default: 'primary',
+    default: 'secondary',
     description: '시각적이거나 맥락적인 위계 구분입니다.',
   },
   {

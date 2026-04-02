@@ -23,7 +23,6 @@ export const BLOCK_BUTTON_PROPERTIES = [
   {
     name: Properties.Children,
     type: ['string'],
-    default: '레이블',
     description: '버튼 텍스트',
   },
   {

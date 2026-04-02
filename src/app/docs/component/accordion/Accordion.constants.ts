@@ -28,7 +28,7 @@ export const ACCORDION_PROPERTIES = [
   {
     name: Properties.IsStretched,
     type: ['boolean'],
-    default: 'primary',
+    default: 'false',
     description: '컴포넌트 내부에 시각적 패딩 없이 늘려져 있는지의 여부입니다.',
   },
   {
@@ -40,7 +40,7 @@ export const ACCORDION_PROPERTIES = [
   {
     name: Properties.Size,
     type: [...ACCORDION_PROPS.SIZES],
-    default: 'solid',
+    default: 'lg',
     description: '버튼의 스타일 변형',
   },
   {
@@ -63,7 +63,6 @@ export const ACCORDION_PROPERTIES = [
   {
     name: Properties.DefaultValue,
     type: ['string'],
-    default: 'false',
     description: '기본적으로 펼쳐져있는 아코디언 아이템입니다. (multiple 모드 전용)',
   },
 ];

@@ -4,22 +4,30 @@ export const Properties = {
   Hierarchy: 'hierarchy',
   Size: 'size',
   Feedback: 'feedback',
-  Icon: 'icon',
   AriaLabel: 'aria-label',
-  PrefixIcon: 'prefixIcon',
-  SuffixIcon: 'suffixIcon',
-  Disabled: 'disabled',
   Type: 'type',
-  IsStretched: 'isStretched',
   Collapsible: 'collapsible',
-  WithPrefixIcon: 'withPrefixIcon',
   AsChild: 'asChild',
   DefaultValue: 'defaultValue',
+  Style: 'style',
+
+  IsMuted: 'isMuted',
+  Disabled: 'disabled',
+  IsStretched: 'isStretched',
+
+  Icon: 'icon',
+  PrefixIcon: 'prefixIcon',
+  SuffixIcon: 'suffixIcon',
+  WithIcon: 'withIcon',
+  WithPrefixIcon: 'withPrefixIcon',
+
+  OnIconClick: 'onIconClick',
 } as const;
 
 export const Title = {
   Single: 'single',
   Multiple: 'multiple',
+  Theme: 'theme',
 };
 
 export const BUTTON_PROPS = {
@@ -41,4 +49,12 @@ export const BUTTON_PROPS = {
 export const ACCORDION_PROPS = {
   TYPES: ['single', 'multiple'] as const,
   SIZES: ['lg', 'md', 'sm'] as const,
+};
+
+export const BADGE_PROPS = {
+  CONTENT_BADGE: {
+    HIERARCHIES: ['accent', 'primary', 'secondary', 'tertiary'] as const,
+    SIZES: ['lg', 'md', 'sm', 'xs'] as const,
+    STYLES: ['outlined', 'alpha', 'solid'] as const,
+  },
 };

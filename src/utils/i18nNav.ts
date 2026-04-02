@@ -11,6 +11,7 @@ export const navDictionaries: Record<Locale, Record<string, string>> = {
     'semantic-color': '시맨틱 컬러',
     components: '컴포넌트',
     badge: '배지',
+    contentBadge: '콘텐츠 배지',
     'default-badge': '기본 배지',
     button: '버튼',
     input: '인풋',

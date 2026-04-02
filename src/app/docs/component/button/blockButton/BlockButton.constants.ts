@@ -1,7 +1,6 @@
 import { createDisplayName } from '@/components';
-import { BlockButton } from '@jects/jds';
-
 import { BUTTON_PROPS, Properties } from '@/constants/components';
+import { BlockButton } from '@jects/jds';
 
 import {
   BlockButtonDisabled,

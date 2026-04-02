@@ -1,9 +1,13 @@
 'use client';
 
-import { DocIntroSection, DocTabs } from '@/components';
+import { DocDevelopmentTab, DocIntroSection, DocTabs } from '@/components';
 import { BlockButton } from '@jects/jds';
 
-import { BlockButtonTab } from './BlockButtonTab';
+import {
+  BLOCK_BUTTON_PROPERTIES,
+  BLOCK_BUTTON_VARIANTS_EXAMPLES,
+  blockButtonDisplayName,
+} from './BlockButton.constants';
 
 export default function BlockButtonPage() {
   return (
@@ -23,7 +27,13 @@ export default function BlockButtonPage() {
           {
             value: 'development',
             label: '개발',
-            content: <BlockButtonTab />,
+            content: (
+              <DocDevelopmentTab
+                properties={BLOCK_BUTTON_PROPERTIES}
+                variantExamples={BLOCK_BUTTON_VARIANTS_EXAMPLES}
+                getDisplayName={blockButtonDisplayName}
+              />
+            ),
           },
         ]}
       />

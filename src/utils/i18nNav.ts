@@ -36,7 +36,7 @@ export const navDictionaries: Record<Locale, Record<string, string>> = {
     patterns: '패턴',
     component: '컴포넌트',
     blockButton: '블록 버튼',
-    labelButton: '라벨 버튼',
+    labelButton: '레이블 버튼',
     iconButton: '아이콘 버튼',
   },
   en: {

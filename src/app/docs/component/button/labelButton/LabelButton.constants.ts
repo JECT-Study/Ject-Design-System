@@ -1,26 +1,24 @@
 import { createDisplayName } from '@/components';
-import { BlockButton } from '@jects/jds';
-
 import { BUTTON_PROPS, Properties } from '@/constants/components';
+import { LabelButton } from '@jects/jds';
 
 import {
-  BlockButtonDisabled,
-  BlockButtonFeedbacks,
-  BlockButtonHierarchies,
-  BlockButtonPrefixIcons,
-  BlockButtonSizes,
-  BlockButtonSuffixIcons,
-  BlockButtonVariants,
-} from './BlockButtonExamples';
+  LabelButtonDisabled,
+  LabelButtonFeedbacks,
+  LabelButtonHierarchies,
+  LabelButtonPrefixIcons,
+  LabelButtonSizes,
+  LabelButtonSuffixIcons,
+} from './LabelButtonExamples';
 
-export const blockButtonDisplayName = createDisplayName(
+export const labelButtonDisplayName = createDisplayName(
   new Map<object, string>([
-    [BlockButton.Basic, 'BlockButton.Basic'],
-    [BlockButton.Feedback, 'BlockButton.Feedback'],
+    [LabelButton.Basic, 'LabelButton.Basic'],
+    [LabelButton.Feedback, 'LabelButton.Feedback'],
   ]),
 );
 
-export const BLOCK_BUTTON_PROPERTIES = [
+export const LABEL_BUTTON_PROPERTIES = [
   {
     name: Properties.Children,
     type: ['string'],
@@ -40,12 +38,6 @@ export const BLOCK_BUTTON_PROPERTIES = [
     description: '버튼의 크기',
   },
   {
-    name: Properties.Variant,
-    type: [...BUTTON_PROPS.BLOCK_BUTTON.VARIANTS],
-    default: 'solid',
-    description: '버튼의 스타일 변형',
-  },
-  {
     name: Properties.PrefixIcon,
     type: ['IconName'],
     description: '버튼 텍스트 앞에 표시되는 아이콘 이름 (Icon 컴포넌트)',
@@ -63,50 +55,43 @@ export const BLOCK_BUTTON_PROPERTIES = [
   },
 ];
 
-export const BLOCK_BUTTON_VARIANTS_EXAMPLES = [
-  {
-    id: Properties.Variant,
-    title: Properties.Variant,
-    description:
-      '버튼의 스타일 변형을 설정합니다. solid(기본), outlined, empty 세 가지를 지원합니다.',
-    ExampleComponent: BlockButtonVariants,
-  },
+export const LABEL_BUTTON_VARIANTS_EXAMPLES = [
   {
     id: Properties.Hierarchy,
     title: Properties.Hierarchy,
     description:
       '버튼의 시각적 위계를 설정합니다. accent, primary, secondary, tertiary를 지원합니다.',
-    ExampleComponent: BlockButtonHierarchies,
+    ExampleComponent: LabelButtonHierarchies,
   },
   {
     id: Properties.Size,
     title: Properties.Size,
     description: '버튼의 크기를 설정합니다. xs, sm, md(기본), lg를 지원합니다.',
-    ExampleComponent: BlockButtonSizes,
+    ExampleComponent: LabelButtonSizes,
   },
   {
     id: Properties.Feedback,
     title: Properties.Feedback,
     description:
       '피드백 인텐트를 가진 버튼입니다. positive(성공)와 destructive(위험) 두 가지를 지원합니다.',
-    ExampleComponent: BlockButtonFeedbacks,
+    ExampleComponent: LabelButtonFeedbacks,
   },
   {
     id: Properties.PrefixIcon,
     title: Properties.PrefixIcon,
     description: '버튼 텍스트 앞에 아이콘을 추가합니다.',
-    ExampleComponent: BlockButtonPrefixIcons,
+    ExampleComponent: LabelButtonPrefixIcons,
   },
   {
     id: Properties.SuffixIcon,
     title: Properties.SuffixIcon,
     description: '버튼 텍스트 뒤에 아이콘을 추가합니다.',
-    ExampleComponent: BlockButtonSuffixIcons,
+    ExampleComponent: LabelButtonSuffixIcons,
   },
   {
     id: Properties.Disabled,
     title: Properties.Disabled,
     description: '비활성화 상태의 버튼입니다.',
-    ExampleComponent: BlockButtonDisabled,
+    ExampleComponent: LabelButtonDisabled,
   },
 ];

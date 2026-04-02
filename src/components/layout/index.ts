@@ -1,5 +1,6 @@
 export * from './DocIntroSection/DocIntroSection';
 export * from './DocVariantSection/DocVariantSection';
+export * from './DocDevelopmentTab/DocDevelopmentTab';
 
 export { MobileHeader } from './header/MobileHeader';
 export { DocumentArea } from './shell/DocumentArea';

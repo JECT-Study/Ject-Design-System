@@ -4,7 +4,7 @@ import { BlockButton } from '@jects/jds';
 
 import {
   BlockButtonDisabled,
-  BlockButtonFeedbacks,
+  BlockButtonFeedback,
   BlockButtonHierarchies,
   BlockButtonPrefixIcons,
   BlockButtonSizes,
@@ -87,7 +87,7 @@ export const BLOCK_BUTTON_VARIANTS_EXAMPLES = [
     title: Properties.Feedback,
     description:
       '피드백 인텐트를 가진 버튼입니다. positive(성공)와 destructive(위험) 두 가지를 지원합니다.',
-    ExampleComponent: BlockButtonFeedbacks,
+    ExampleComponent: BlockButtonFeedback,
   },
   {
     id: Properties.PrefixIcon,

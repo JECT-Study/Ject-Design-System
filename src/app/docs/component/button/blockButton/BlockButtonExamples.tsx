@@ -34,7 +34,7 @@ export function BlockButtonSizes() {
   );
 }
 
-export function BlockButtonFeedbacks() {
+export function BlockButtonFeedback() {
   return (
     <div className="flex w-full items-center justify-center gap-3.5">
       <BlockButton.Feedback intent="positive">positive</BlockButton.Feedback>

@@ -1,11 +1,10 @@
 import { createDisplayName } from '@/components';
-import { IconButton } from '@jects/jds';
-
 import { BUTTON_PROPS, Properties } from '@/constants/components';
+import { IconButton } from '@jects/jds';
 
 import {
   IconButtonDisabled,
-  IconButtonFeedbacks,
+  IconButtonFeedback,
   IconButtonHierarchies,
   IconButtons,
   IconButtonSizes,
@@ -72,7 +71,7 @@ export const ICON_BUTTON_VARIANTS_EXAMPLES = [
     id: Properties.Feedback,
     title: Properties.Feedback,
     description: '피드백 유형에 대한 변형입니다.',
-    ExampleComponent: IconButtonFeedbacks,
+    ExampleComponent: IconButtonFeedback,
   },
   {
     id: Properties.Disabled,

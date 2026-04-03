@@ -34,7 +34,7 @@ export function ContentBadgeSizes() {
   );
 }
 
-export function ContentBadgeFeedbacks() {
+export function ContentBadgeFeedback() {
   return (
     <div className="flex w-full items-center justify-center gap-3.5">
       <ContentBadge.Feedback variant="positive">Positive</ContentBadge.Feedback>

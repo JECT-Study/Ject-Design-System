@@ -3,7 +3,7 @@ import { BADGE_PROPS, Properties } from '@/constants/components';
 import { NumericBadge } from '@jects/jds';
 
 import {
-  NumericBadgeFeedbacks,
+  NumericBadgeFeedback,
   NumericBadgeHierarchies,
   NumericBadgeMuted,
   NumericBadgeSizes,
@@ -74,7 +74,7 @@ export const NUMERIC_BADGE_VARIANTS_EXAMPLES = [
     title: Properties.Feedback,
     description:
       '피드백 인텐트를 가진 너머릭 배지입니다. positive, destructive, notifying 세 가지를 지원합니다.',
-    ExampleComponent: NumericBadgeFeedbacks,
+    ExampleComponent: NumericBadgeFeedback,
   },
   {
     id: Properties.IsMuted,

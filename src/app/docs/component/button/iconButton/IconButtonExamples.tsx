@@ -40,7 +40,7 @@ export function IconButtonHierarchies() {
   );
 }
 
-export function IconButtonFeedbacks() {
+export function IconButtonFeedback() {
   return (
     <div className="flex w-full items-center justify-center gap-3.5">
       <IconButton.Feedback icon="check-line" intent="positive" size="md" aria-label="Positive MD" />

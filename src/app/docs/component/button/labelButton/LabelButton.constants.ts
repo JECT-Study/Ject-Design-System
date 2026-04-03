@@ -4,7 +4,7 @@ import { LabelButton } from '@jects/jds';
 
 import {
   LabelButtonDisabled,
-  LabelButtonFeedbacks,
+  LabelButtonFeedback,
   LabelButtonHierarchies,
   LabelButtonPrefixIcons,
   LabelButtonSizes,
@@ -73,7 +73,7 @@ export const LABEL_BUTTON_VARIANTS_EXAMPLES = [
     title: Properties.Feedback,
     description:
       '피드백 인텐트를 가진 버튼입니다. positive(성공)와 destructive(위험) 두 가지를 지원합니다.',
-    ExampleComponent: LabelButtonFeedbacks,
+    ExampleComponent: LabelButtonFeedback,
   },
   {
     id: Properties.PrefixIcon,

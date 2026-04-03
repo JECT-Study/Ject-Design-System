@@ -35,7 +35,7 @@ export function NumericBadgeSizes() {
   );
 }
 
-export function NumericBadgeFeedbacks() {
+export function NumericBadgeFeedback() {
   return (
     <div className="flex w-full items-center justify-center gap-3.5">
       <NumericBadge.Feedback variant="positive">{BADGE_NUMBER}</NumericBadge.Feedback>

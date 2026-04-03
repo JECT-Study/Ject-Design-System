@@ -3,7 +3,7 @@ import { BADGE_PROPS, Properties, Title } from '@/constants/components';
 import { ContentBadge } from '@jects/jds';
 
 import {
-  ContentBadgeFeedbacks,
+  ContentBadgeFeedback,
   ContentBadgeHierarchies,
   ContentBadgeMuted,
   ContentBadgeSizes,
@@ -88,7 +88,7 @@ export const CONTENT_BADGE_VARIANTS_EXAMPLES = [
     title: Properties.Feedback,
     description:
       '피드백 인텐트를 가진 콘텐츠 배지입니다. positive(성공)와 destructive(위험) 두 가지를 지원합니다.',
-    ExampleComponent: ContentBadgeFeedbacks,
+    ExampleComponent: ContentBadgeFeedback,
   },
   {
     id: Properties.WithIcon,

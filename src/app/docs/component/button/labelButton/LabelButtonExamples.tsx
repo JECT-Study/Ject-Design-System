@@ -24,7 +24,7 @@ export function LabelButtonSizes() {
   );
 }
 
-export function LabelButtonFeedbacks() {
+export function LabelButtonFeedback() {
   return (
     <div className="flex w-full items-center justify-center gap-3.5">
       <LabelButton.Feedback intent="positive">positive</LabelButton.Feedback>

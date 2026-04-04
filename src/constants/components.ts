@@ -43,6 +43,14 @@ export const Properties = {
   Loading: 'loading',
   Standalone: 'standalone',
   Author: 'author',
+
+  Checked: 'checked',
+  OnCheckedChange: 'onCheckedChange',
+  IsInvalid: 'isInvalid',
+  Label: 'label',
+  SubLabel: 'subLabel',
+  Align: 'align',
+  Indeterminate: 'indeterminate',
 } as const;
 
 export const Title = {
@@ -103,4 +111,10 @@ export const CALLOUT_PROPS = {
   SIZES: ['lg', 'md', 'sm', 'xs'] as const,
   HIERARCHIES: ['primary', 'secondary'] as const,
   FEEDBACK: ['positive', 'notifying', 'destructive'] as const,
+};
+
+export const CHECKBOX_PROPS = {
+  SIZES: ['lg', 'md', 'sm', 'xs'] as const,
+  VARIANTS: ['empty', 'outlined'] as const,
+  ALIGNS: ['left', 'right'] as const,
 };

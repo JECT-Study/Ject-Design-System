@@ -15,6 +15,7 @@ export const navDictionaries: Record<Locale, Record<string, string>> = {
     dotBadge: '닷 배지',
     numericBadge: '너머릭 배지',
     callout: '콜아웃',
+    card: '카드',
     button: '버튼',
     input: '인풋',
     checkbox: '체크박스',

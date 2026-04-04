@@ -29,13 +29,6 @@ export const CARD_PROPERTIES = [
     type: ['ReactNode'],
     description: '카드 내부에 렌더링할 콘텐츠입니다.',
   },
-  {
-    name: Properties.Standalone,
-    type: ['boolean'],
-    default: 'false',
-    description:
-      '[Card.Caption] 독립형 캡션으로 표시할지 여부입니다. true이면 별도 스타일이 적용됩니다.',
-  },
 ];
 
 export const CARD_VARIANTS_EXAMPLES = [

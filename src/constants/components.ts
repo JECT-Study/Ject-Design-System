@@ -22,6 +22,7 @@ export const Properties = {
   Interactive: 'interactive',
 
   Title: 'title',
+  WithLabel: 'withLabel',
   LabelButtonProps: 'labelButtonProps',
 
   Icon: 'icon',

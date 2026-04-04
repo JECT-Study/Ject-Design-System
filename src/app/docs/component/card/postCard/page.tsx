@@ -4,20 +4,20 @@ import { DocDevelopmentTab, DocIntroSection, DocTabs } from '@/components';
 import { DATE, VERSION } from '@/constants/components';
 import { Card } from '@jects/jds';
 
-import { CARD_PROPERTIES, CARD_VARIANTS_EXAMPLES, cardDisplayName } from './Card.constants';
+import { CARD_PROPERTIES, CARD_VARIANTS_EXAMPLES, cardDisplayName } from './PostCard.constants';
 
 export default function CardPage() {
   return (
     <div className="flex w-full flex-col gap-80">
       <DocIntroSection
-        korName="카드"
-        engName="Card"
-        description="Card 컴포넌트는 이미지, 텍스트, 메타 정보 등 관련 콘텐츠를 하나의 컨테이너로 묶어 표시하는 영역입니다. plate(일반 콘텐츠)와 post(게시글) 두 가지 변형을 지원합니다."
+        korName="포스트 카드"
+        engName="Post Card"
+        description="포스트 카드는 게시글, 콘텐츠의 핵심 정보를 요약해 목록, 그리드에서 빠르게 훑게 하는 카드입니다. 썸네일, 제목, 요약, 메타 데이터 같은 슬롯을 고정된 구조로 담습니다."
         version={VERSION}
         date={DATE}
       >
         <div>
-          <Card.Root layout="vertical" variant="plate">
+          <Card.Root layout="vertical" variant="post">
             <Card.Image alt="프로젝트 이미지" />
             <Card.Content>
               <Card.Title>타이틀 레이블</Card.Title>

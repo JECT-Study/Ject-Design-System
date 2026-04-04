@@ -18,6 +18,7 @@ export const navDictionaries: Record<Locale, Record<string, string>> = {
     card: '카드',
     button: '버튼',
     input: '인풋',
+    image: '이미지',
     checkbox: '체크박스',
     code: '코드',
     radio: '라디오',

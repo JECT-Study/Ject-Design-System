@@ -18,6 +18,7 @@ export const Properties = {
   Disabled: 'disabled',
   IsStretched: 'isStretched',
   IsDisabled: 'isDisabled',
+  IsReadonly: 'isReadonly',
   Interactive: 'interactive',
 
   Title: 'title',
@@ -151,4 +152,10 @@ export const DIVIDER_PROPS = {
 export const EMPTY_STATE_PROPS = {
   VARIANTS: ['empty', 'outlined', 'alpha'] as const,
   LAYOUTS: ['vertical', 'horizontal'] as const,
+};
+
+export const IMAGE_PROPS = {
+  RATIOS: ['1:1', '4:5', '3:4', '2:3', '9:16', '1:2', '9:21'] as const,
+  ORIENTATIONS: ['portrait', 'landscape'] as const,
+  LOADING: ['lazy', 'eager'] as const,
 };

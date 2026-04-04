@@ -46,6 +46,7 @@ export const navDictionaries: Record<Locale, Record<string, string>> = {
     dialog: '다이얼로그',
     divider: '디바이더',
     emptyState: '엠티 스테이트',
+    fileItem: '파일 아이템',
   },
   en: {
     overview: 'Overview',
@@ -88,6 +89,7 @@ export const navDictionaries: Record<Locale, Record<string, string>> = {
     dialog: 'Dialog',
     divider: 'Divider',
     emptyState: 'Empty State',
+    fileItem: 'File Item',
   },
 };
 

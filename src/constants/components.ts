@@ -62,6 +62,14 @@ export const Properties = {
   TertiaryAction: 'tertiaryAction',
   IsButtonStretched: 'isButtonStretched',
   CheckboxAction: 'checkboxAction',
+
+  FileName: 'fileName',
+  FileSize: 'fileSize',
+  Readonly: 'readonly',
+  HasError: 'hasError',
+  ErrorMessage: 'errorMessage',
+  Removeable: 'removeable',
+  OnRemove: 'onRemove',
 } as const;
 
 export const Title = {

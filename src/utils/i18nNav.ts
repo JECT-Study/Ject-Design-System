@@ -44,6 +44,7 @@ export const navDictionaries: Record<Locale, Record<string, string>> = {
     labelButton: '레이블 버튼',
     iconButton: '아이콘 버튼',
     dialog: '다이얼로그',
+    divider: '디바이더',
   },
   en: {
     overview: 'Overview',
@@ -84,6 +85,7 @@ export const navDictionaries: Record<Locale, Record<string, string>> = {
     labelButton: 'Label Button',
     iconButton: 'Icon Button',
     dialog: 'Dialog',
+    divider: 'Divider',
   },
 };
 

@@ -52,6 +52,9 @@ export const Properties = {
   Align: 'align',
   Indeterminate: 'indeterminate',
 
+  Thickness: 'thickness',
+  Decorative: 'decorative',
+
   Header: 'header',
   Body: 'body',
   PrimaryAction: 'primaryAction',
@@ -129,4 +132,10 @@ export const CHECKBOX_PROPS = {
 
 export const CODE_PROPS = {
   SIZES: ['lg', 'md', 'sm', 'xs'] as const,
+};
+
+export const DIVIDER_PROPS = {
+  VARIANTS: ['solid', 'dashed'] as const,
+  THICKNESSES: ['normal', 'bold', 'bolder', 'boldest'] as const,
+  ORIENTATIONS: ['horizontal', 'vertical'] as const,
 };

@@ -118,3 +118,7 @@ export const CHECKBOX_PROPS = {
   VARIANTS: ['empty', 'outlined'] as const,
   ALIGNS: ['left', 'right'] as const,
 };
+
+export const CODE_PROPS = {
+  SIZES: ['lg', 'md', 'sm', 'xs'] as const,
+};

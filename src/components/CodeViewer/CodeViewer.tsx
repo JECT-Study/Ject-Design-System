@@ -68,7 +68,7 @@ export function CodeViewer({ code, language = 'html' }: CodeViewerProps) {
           showLineNumbers={false}
           showInlineErrors={false}
           readOnly={true}
-          style={{ flex: 1, height: '100%' }}
+          style={{ flex: 1, height: '100%', width: '42.5rem' }}
         />
         <div className="absolute top-[8px] right-[8px] z-10 flex items-center gap-[4px]">
           <UnstyledOpenInCodeSandboxButton

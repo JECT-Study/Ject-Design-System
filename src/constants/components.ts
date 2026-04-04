@@ -51,6 +51,14 @@ export const Properties = {
   SubLabel: 'subLabel',
   Align: 'align',
   Indeterminate: 'indeterminate',
+
+  Header: 'header',
+  Body: 'body',
+  PrimaryAction: 'primaryAction',
+  SecondaryAction: 'secondaryAction',
+  TertiaryAction: 'tertiaryAction',
+  IsButtonStretched: 'isButtonStretched',
+  CheckboxAction: 'checkboxAction',
 } as const;
 
 export const Title = {

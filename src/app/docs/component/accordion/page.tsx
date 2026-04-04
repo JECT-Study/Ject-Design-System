@@ -1,6 +1,7 @@
 'use client';
 
 import { DocDevelopmentTab, DocIntroSection, DocTabs } from '@/components';
+import { DATE, VERSION } from '@/constants/components';
 import { Accordion } from '@jects/jds';
 
 import {
@@ -11,13 +12,13 @@ import {
 
 export default function AccordionPage() {
   return (
-    <div className="flex flex-col gap-80">
+    <div className="flex w-full flex-col gap-80">
       <DocIntroSection
         korName="아코디언"
         engName="Accordion"
         description="Accordion 컴포넌트는 Radix UI를 기반으로 만들어진 접고 펼칠 수 있는 컨텐츠 영역입니다."
-        version="0.0.1"
-        date="2026년 1월 27일(화) 14:23"
+        version={VERSION}
+        date={DATE}
       >
         <div className="w-125">
           <Accordion.Root size="lg" type="multiple">

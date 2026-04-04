@@ -139,3 +139,8 @@ export const DIVIDER_PROPS = {
   THICKNESSES: ['normal', 'bold', 'bolder', 'boldest'] as const,
   ORIENTATIONS: ['horizontal', 'vertical'] as const,
 };
+
+export const EMPTY_STATE_PROPS = {
+  VARIANTS: ['empty', 'outlined', 'alpha'] as const,
+  LAYOUTS: ['vertical', 'horizontal'] as const,
+};

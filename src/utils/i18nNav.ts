@@ -45,6 +45,7 @@ export const navDictionaries: Record<Locale, Record<string, string>> = {
     iconButton: '아이콘 버튼',
     dialog: '다이얼로그',
     divider: '디바이더',
+    emptyState: '엠티 스테이트',
   },
   en: {
     overview: 'Overview',
@@ -86,6 +87,7 @@ export const navDictionaries: Record<Locale, Record<string, string>> = {
     iconButton: 'Icon Button',
     dialog: 'Dialog',
     divider: 'Divider',
+    emptyState: 'Empty State',
   },
 };
 
